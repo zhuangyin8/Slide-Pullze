@@ -56,7 +56,9 @@ function clearTimer() {
 
 // 重置时间为 0:00
 function resetTimer() {
-  div_sec.innerHTML = "00";
+  sec = "00"; // 变量值置为零
+  min = 0;
+  div_sec.innerHTML = "00"; // 页面显示置为零
   div_min.innerHTML = 0;
 }
 
@@ -178,6 +180,7 @@ function win() {
   }
   if (win) {
     clearTimer();
+
     navigator.vibrate(500);
 
     function showAlert() {
@@ -205,8 +208,7 @@ function verifArray() {
   var count = 0;
   var arrayNum = [];
   for (var i = 1; i <= 9; i++) {
-    var w = document.getElementById(i).innerHTML;
-    arrayNum[i - 1] = w;
+    arrayNum[i - 1] = document.getElementById(i).innerHTML;
   }
 
   for (var i = 0; i <= arrayNum.length - 1; i++) {
