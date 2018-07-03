@@ -1,8 +1,15 @@
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   font-family: "Open Sans", "Source Sans Pro", sans-serif;
   text-align: center;
   background: #0f9d58;
   color: #837d7a;
+  width: 400px;
 }
 
 .btn {
@@ -97,7 +104,7 @@ body {
   margin: 1px;
   font-size: 60px;
   color: #837d7a;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 a:link,
