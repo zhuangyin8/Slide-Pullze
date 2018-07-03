@@ -91,6 +91,13 @@ function change(x, left, up, right, down, left2, up2, right2, down2) {
   steps++;
 }
 
+function stop() {
+    setTimeout(showAlert, 1000);
+//   alert(`🏆YOU WIN!🏆 
+// You made {steps} moves.
+// Your time is {min} min. and{sec} sec.`);
+}
+
 //确认九宫格是否存在空格
 function verIfEmpty(x) {
   return document.getElementById(x).innerHTML === "";
@@ -183,21 +190,23 @@ function win() {
 
     navigator.vibrate(500);
 
-    function showAlert() {
-      alert(
-        " YOU WIN!\n You made " +
-          steps +
-          " moves\n Your time is " +
-          min +
-          " min. and " +
-          sec +
-          " sec."
-      );
-    }
-
     setTimeout(showAlert, 1000);
     document.getElementById("9").innerHTML = "9";
   }
+}
+function showAlert() {
+  alert(
+    // " 🏆YOU WIN!🏆\n You made " +
+    //   steps +
+    //   " moves\n Your time is " +
+    //   min +
+    //   " min. and " +
+    //   sec +
+    //   " sec."
+    `🏆YOU WIN!🏆 
+      You made {steps} moves.
+      Your time is {min} min. and{sec} sec.`
+  );
 }
 
 function showScore() {
