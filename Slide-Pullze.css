@@ -1,0 +1,120 @@
+body {
+  font-family: "Open Sans", "Source Sans Pro", sans-serif;
+  text-align: center;
+  background: #0f9d58;
+  color: #837d7a;
+}
+
+.btn {
+  margin: 1rem;
+  padding: 0.6rem 1.1rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  background: #fe4365;
+  box-shadow: 0 0 0 -2px #cff09e, 0 0 0 -1px #fe4365;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: box-shadow 0.3s;
+}
+
+.btn:hover,
+.btn:focus {
+  box-shadow: 0 0 0 2px #cff09e, 0 0 0 4px #ff0364;
+  animation: gelatine 0.5s 1;
+}
+
+.btn-secondary {
+  background: #c8c8a9;
+  box-shadow: 0 0 0 -2px #cff09e, 0 0 0 -1px #c8c8a9;
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 0 0 2px #cff09e, 0 0 0 4px #bebe99;
+}
+
+.btn:active,
+.btn-secondary:active {
+  background: #4ecdc4;
+  box-shadow: 0 0 0 2px #cff09e, 0 0 0 4px #3ac7bd;
+  transition-duration: 0s;
+}
+
+@keyframes gelatine {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+#container {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-radius: 15px;
+  margin: 20px;
+}
+
+#box {
+  height: 252px;
+  width: 252px;
+  border: 3px solid #837d7a;
+  border-radius: 5px;
+  background: #ffffff;
+  margin: auto;
+}
+
+.numbers {
+  background-color: #ffffff;
+  text-align: center;
+  height: 80px;
+  width: 80px;
+  border: 1px solid white;
+  border-radius: 5px;
+  float: left;
+  margin: 1px;
+  font-size: 60px;
+  color: #837d7a;
+  font-weight: bold;
+}
+
+a:link,
+a:visited {
+  color: #837d7a;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover,
+a:active {
+  background-color: #837d7a;
+  color: rgb(114, 196, 219);
+}
+
+header footer {
+  background: #0f9d58;
+}
