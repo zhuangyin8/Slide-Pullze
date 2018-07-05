@@ -15,7 +15,7 @@ var div_min = document.getElementById("min");
  * intervalID 是此重复操作的唯一辨识符，可以作为参数传给clearInterval()
  * func 是你想要重复调用的函数。
  */
-function startTimer () {
+function startTimer() {
   //每一秒,秒钟自增一
   seconds = window.setInterval(secTimer, 1000);
   //每六十秒,分钟自增一
@@ -23,7 +23,7 @@ function startTimer () {
 }
 
 //秒钟自增1
-function secTimer () {
+function secTimer() {
   sec++; //秒钟自增1
 
   if (sec < 10) {
@@ -37,7 +37,7 @@ function secTimer () {
 }
 
 //分钟增1
-function minTimer () {
+function minTimer() {
   min++; //分钟增1
   div_min.innerHTML = min; //写入分钟数
 }
@@ -48,13 +48,13 @@ function minTimer () {
  * window.clearInterval(intervalID)
  * intervalID是你想要取消的定时器的ID,这个ID是个整数,是由setInterval()返回的.
  */
-function clearTimer () {
+function clearTimer() {
   window.clearInterval(seconds);
   window.clearInterval(minutes);
 }
 
 // 重置时间为 0:00
-function resetTimer () {
+function resetTimer() {
   sec = "00"; // 变量值置为零
   min = 0;
   div_sec.innerHTML = "00"; // 页面显示置为零
@@ -99,13 +99,6 @@ function change(x, left, up, right, down, left2, up2, right2, down2) {
     changeContent(id, id + 3);
   }
   steps++;
-}
-
-function stop() {
-  setTimeout(showAlert, 1000);
-  //   alert(`🏆YOU WIN!🏆
-  // You made {steps} moves.
-  // Your time is {min} min. and{sec} sec.`);
 }
 
 //确认九宫格是否存在空格
@@ -199,17 +192,20 @@ function win() {
     clearTimer();
 
     navigator.vibrate(500);
-
+    function showAlert() {
+      alert(
+        " 🏆YOU WIN!🏆 \n You made " +
+          steps +
+          " moves\n Your time is " +
+          min +
+          " min. and " +
+          sec +
+          " sec."
+      );
+    }
     setTimeout(showAlert, 1000);
     document.getElementById("9").innerHTML = "9";
   }
-}
-function showAlert() {
-  alert(
-    `🏆YOU WIN!🏆 
-      You made {steps} moves.
-      Your time is {min} min. and{sec} sec.`
-  );
 }
 
 function showScore() {
