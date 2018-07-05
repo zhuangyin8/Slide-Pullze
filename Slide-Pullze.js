@@ -79,26 +79,35 @@ function change(x, left, up, right, down, left2, up2, right2, down2) {
   var id = x;
   if (left == true && verIfEmpty(id - 1) == true) {
     changeContent(id, id - 1);
+    steps++;
   } else if (left2 == true && verIfEmpty(id - 2) == true) {
     changeContent(id - 1, id - 2);
     changeContent(id, id - 1);
+    steps++;
   } else if (up == true && verIfEmpty(id - 3) == true) {
     changeContent(id, id - 3);
+    steps++;
   } else if (up2 == true && verIfEmpty(id - 6) == true) {
     changeContent(id - 3, id - 6);
     changeContent(id, id - 3);
+    steps++;
   } else if (right == true && verIfEmpty(id + 1) == true) {
     changeContent(id, id + 1);
+    steps++;
   } else if (right2 == true && verIfEmpty(id + 2) == true) {
     changeContent(id + 1, id + 2);
     changeContent(id, id + 1);
+    steps++;
   } else if (down == true && verIfEmpty(id + 3) == true) {
     changeContent(id, id + 3);
+    steps++;
   } else if (down2 == true && verIfEmpty(id + 6) == true) {
     changeContent(id + 3, id + 6);
     changeContent(id, id + 3);
+    steps++;
   }
-  steps++;
+  showScore();
+
 }
 
 //确认九宫格是否存在空格
