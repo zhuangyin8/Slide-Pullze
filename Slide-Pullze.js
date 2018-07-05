@@ -8,15 +8,14 @@ var seconds;
 var minutes;
 var div_sec = document.getElementById("sec");
 var div_min = document.getElementById("min");
-
-function startTimer() {
-  /**
-   * setInterval() 方法重复调用一个函数或执行一个代码段，在每次调用之间具有固定的时间延迟。
-   * 返回一个 intervalID。
-   * let intervalID = window.setInterval(func, delay);
-   * intervalID 是此重复操作的唯一辨识符，可以作为参数传给clearInterval()
-   * func 是你想要重复调用的函数。
-   */
+/**
+ * setInterval() 方法重复调用一个函数或执行一个代码段，在每次调用之间具有固定的时间延迟。
+ * 返回一个 intervalID。
+ * let intervalID = window.setInterval(func, delay);
+ * intervalID 是此重复操作的唯一辨识符，可以作为参数传给clearInterval()
+ * func 是你想要重复调用的函数。
+ */
+function startTimer () {
   //每一秒,秒钟自增一
   seconds = window.setInterval(secTimer, 1000);
   //每六十秒,分钟自增一
@@ -24,7 +23,7 @@ function startTimer() {
 }
 
 //秒钟自增1
-function secTimer() {
+function secTimer () {
   sec++; //秒钟自增1
 
   if (sec < 10) {
@@ -38,24 +37,24 @@ function secTimer() {
 }
 
 //分钟增1
-function minTimer() {
+function minTimer () {
   min++; //分钟增1
   div_min.innerHTML = min; //写入分钟数
 }
 
-//清除定时器
-function clearTimer() {
-  /**
-   * 取消用setInterval设置的重复定时任务。
-   * window.clearInterval(intervalID)
-   * intervalID是你想要取消的定时器的ID,这个ID是个整数,是由setInterval()返回的.
-   */
+/**
+ * 清除定时器
+ * 取消用setInterval设置的重复定时任务。
+ * window.clearInterval(intervalID)
+ * intervalID是你想要取消的定时器的ID,这个ID是个整数,是由setInterval()返回的.
+ */
+function clearTimer () {
   window.clearInterval(seconds);
   window.clearInterval(minutes);
 }
 
 // 重置时间为 0:00
-function resetTimer() {
+function resetTimer () {
   sec = "00"; // 变量值置为零
   min = 0;
   div_sec.innerHTML = "00"; // 页面显示置为零
@@ -64,7 +63,18 @@ function resetTimer() {
 
 //获取九宫格
 var numbers = document.getElementsByClassName("numbers");
-
+/**
+ *
+ * @param {*} x
+ * @param {*} left 左移一
+ * @param {*} up 上移一
+ * @param {*} right 右移一
+ * @param {*} down 下移一
+ * @param {*} left2 左移二
+ * @param {*} up2 上移二
+ * @param {*} right2 右移二
+ * @param {*} down2 下移二
+ */
 function change(x, left, up, right, down, left2, up2, right2, down2) {
   var id = x;
   if (left == true && verIfEmpty(id - 1) == true) {
@@ -92,10 +102,10 @@ function change(x, left, up, right, down, left2, up2, right2, down2) {
 }
 
 function stop() {
-    setTimeout(showAlert, 1000);
-//   alert(`🏆YOU WIN!🏆 
-// You made {steps} moves.
-// Your time is {min} min. and{sec} sec.`);
+  setTimeout(showAlert, 1000);
+  //   alert(`🏆YOU WIN!🏆
+  // You made {steps} moves.
+  // Your time is {min} min. and{sec} sec.`);
 }
 
 //确认九宫格是否存在空格
@@ -196,13 +206,6 @@ function win() {
 }
 function showAlert() {
   alert(
-    // " 🏆YOU WIN!🏆\n You made " +
-    //   steps +
-    //   " moves\n Your time is " +
-    //   min +
-    //   " min. and " +
-    //   sec +
-    //   " sec."
     `🏆YOU WIN!🏆 
       You made {steps} moves.
       Your time is {min} min. and{sec} sec.`
@@ -210,7 +213,7 @@ function showAlert() {
 }
 
 function showScore() {
-  document.getElementById("score").innerHTML = "MOVES = " + steps;
+  document.getElementById("score").innerHTML = "Moves = " + steps;
 }
 
 function verifArray() {
